@@ -1310,9 +1310,9 @@ dataIdentifiers = {
         2490 : RawCodec(1, "StartUpWizardState"),
         2491 : RawCodec(1, "DomesticHotWaterDemandInput"),
         2493 : RawCodec(2, "VentilationBypassPosition"),
-        2494 : O3EInt32(4, "CurrentThermalCapacityRefrigerantCircuit", scale = 1),
-        2495 : O3EInt32(4, "CurrentThermalCapacityElectricHeater", scale = 1),
-        2496 : O3EInt32(4, "CurrentThermalCapacitySystem", scale = 1),
+        2494 : O3EInt32(4, "CurrentThermalCapacityRefrigerantCircuit", scale = 1, signed = True),
+        2495 : O3EInt32(4, "CurrentThermalCapacityElectricHeater", scale = 1, signed = True),
+        2496 : O3EInt32(4, "CurrentThermalCapacitySystem", scale = 1, signed = True),
         2497 : RawCodec(3, "ResetStatisticalValuesDate"),
         2498 : O3EByteVal(1, "CentralHeatingPumpType"),
         2499 : O3EByteVal(1, "MixerOneCircuitPumpType"),
@@ -1422,7 +1422,7 @@ dataIdentifiers = {
         2608 : RawCodec(28, "FilterSettings"),
         2609 : RawCodec(6, "CommissioningStatus"),
         2610 : RawCodec(1, "SetDeliveryStateExpert"),
-        2611 : RawCodec(4, "NominalThermalCapacityIndoorUnit"),
+        2611 : O3EInt32(4, "NominalThermalCapacityIndoorUnit", scale = 1),
         2612 : O3EComplexType(7, "PrimarySourceCommonSettingsHeating", [O3EByteVal(1, "Mode"), O3EInt16(2, "MaxFanSpeed"), O3EInt16(2, "DefaultFanSpeed"), O3EInt16(2, "MinFanSpeed")]),# ODU-FanSpeed --> Mode: Fixed/Variable, Unit: %
         2613 : O3EComplexType(7, "PrimarySourceCommonSettingsCooling", [O3EByteVal(1, "Mode"), O3EInt16(2, "MaxFanSpeed"), O3EInt16(2, "DefaultFanSpeed"), O3EInt16(2, "MinFanSpeed")]),# ODU-FanSpeed --> Mode: Fixed/Variable, Unit: %
         2621 : O3EInt16(2, "MaximumOperatingPressureActualTemperatureSetpoint"),
@@ -1431,9 +1431,9 @@ dataIdentifiers = {
         2624 : O3EComplexType(9, "SeasonalCoefficientOfPerformanceDomesticHotWater", [O3EInt8(1, "CurrentYear", scale=10), O3EInt32(4, "EnergyThermal", scale=10), O3EInt32(4, "EnergyElectric", scale=10)]), #250-xH
         2625 : O3EComplexType(9, "SeasonalCoefficientOfPerformanceHeatingAndDomesticHotWater", [O3EInt8(1, "CurrentYear", scale=10), O3EInt32(4, "EnergyThermal", scale=10), O3EInt32(4, "EnergyElectric", scale=10)]), #250-xH
         2626 : O3EInt32(4, "MaximumPowerElectricalHeater", scale = 1),
-        2627 : O3EInt16(2, "CompressorStartUpTimer"),
-        2629 : O3EInt32(4, "DesiredThermalCapacity", scale = 1),
-#        2630 : RawCodec(4, "CompressorMinMaxSpeedHeating"),
+        2627 : O3EInt16(2, "CompressorStartUpTimer"),#+++
+        2629 : O3EInt32(4, "DesiredThermalCapacity", scale = 1, signed = True),
+#        2630 : RawCodec(4, "CompressorMinMaxSpeedHeating"),#+++
         2630 : O3EComplexType(4, "CompressorMinMaxSpeedHeating", [O3EInt16(2, "Min", scale =10, signed = "True"), O3EInt16(2, "Max", scale =10, signed = "True")]), #250SH Unit RpS
 #        2631 : RawCodec(4, "CompressorMinMaxSpeedCooling"),
         2631 : O3EComplexType(4, "CompressorMinMaxSpeedCooling", [O3EInt16(2, "Min", scale =10, signed = "True"), O3EInt16(2, "Max", scale =10, signed = "True")]), #250SH Unit RpS
